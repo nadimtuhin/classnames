@@ -1,16 +1,17 @@
 <?php
 
-function classnames() {
+function classNames() {
   $args = func_get_args();
-  $expressions = end( $args );
 
-  $classes = array_map( function ( $expression, $class ) {
-    return $expression ? $class : false;
-  }, $expressions, array_keys( $expressions ) );
+  $classes = array_map( function ( $arg ) {
+    if ( is_array( $arg ) ) {
+      return array_map( function ( $expression, $class ) {
+        return $expression ? $class : false;
+      }, $arg, array_keys( $arg ) );
+    }
 
-  if ( count( $args ) > 1 ) {
-    $classes = array_merge( $classes, array_slice( $args, 0, - 1 ) );
-  }
+    return $arg;
+  }, $args );
 
   return implode( " ", array_filter( $classes ) );
 }
