@@ -5,9 +5,9 @@ function classNames() {
 
   $classes = array_map( function ( $arg ) {
     if ( is_array( $arg ) ) {
-      return array_map( function ( $expression, $class ) {
+      return implode(" ", array_filter(array_map( function ( $expression, $class ) {
         return $expression ? $class : false;
-      }, $arg, array_keys( $arg ) );
+      }, $arg, array_keys( $arg ) )));
     }
 
     return $arg;
