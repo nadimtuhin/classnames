@@ -1,0 +1,13 @@
+{
+    "name": "nadimtuhin/classnames",
+    "description": "css classnames generator",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nadim Tuhin",
+            "email": "nadimtuhin@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
