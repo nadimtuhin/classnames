@@ -1,0 +1,2 @@
+{ "banners": { "h-start": "GET STARTED", "h-help": "NEED HELP", "h-dev": "FOR DEVELOPERS" },
+  "hero": { "kicker": "PHP · HELPER", "title": "classNames", "tagline": "Join CSS class names. Falsy ones drop out." } }
