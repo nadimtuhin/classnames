@@ -10,7 +10,13 @@
     ],
     "minimum-stability": "dev",
     "require": {},
+    "autoload": {
+        "files": ["classnames.php"]
+    },
     "scripts": {
-        "test": "php tests/run.php"
+        "test": [
+            "php tests/run.php",
+            "php tests/autoload.php"
+        ]
     }
 }
