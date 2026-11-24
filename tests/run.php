@@ -21,6 +21,10 @@ $cases = array(
   array(array(array("a", array("b", array("c")))), "a b c"),
   array(array(array("a", null, false, "", 0)), "a"),
   array(array(array(123 => true, 456 => false)), "123"),
+
+  // booleans are never class names, so `$cond && "foo"` is safe
+  array(array(true), ""),
+  array(array("foo", true, false), "foo"),
 );
 
 $failures = 0;

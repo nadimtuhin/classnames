@@ -16,7 +16,7 @@ function classNames() {
       }, $arg, array_keys( $arg ) )));
     }
 
-    return $arg;
+    return is_bool( $arg ) ? false : $arg;
   }, $args );
 
   return implode( " ", array_filter( $classes ) );
