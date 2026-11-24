@@ -14,6 +14,13 @@ $cases = array(
   array(array(null, false, "bar", 0, 1, array("baz" => null)), "bar 1"),
   array(array("btn", array("btn-active" => true, "btn-big" => false)), "btn btn-active"),
   array(array(), ""),
+
+  // list arrays and nesting, as in JS classnames
+  array(array(array("foo", "bar")), "foo bar"),
+  array(array("a", array("b", array("c" => true, "d" => false))), "a b c"),
+  array(array(array("a", array("b", array("c")))), "a b c"),
+  array(array(array("a", null, false, "", 0)), "a"),
+  array(array(array(123 => true, 456 => false)), "123"),
 );
 
 $failures = 0;
