@@ -9,5 +9,14 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+    "require": {},
+    "autoload": {
+        "files": ["classnames.php"]
+    },
+    "scripts": {
+        "test": [
+            "php tests/run.php",
+            "php tests/autoload.php"
+        ]
+    }
 }

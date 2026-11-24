@@ -52,9 +52,9 @@ No. It is one file with no dependencies. Just `require` it.
 </details>
 
 <details>
-<summary>I got "1" instead of class names</summary>
+<summary>Can I pass a plain list?</summary>
 
-Pass names as keys: `["foo" => true]`, not `["foo"]`.
+Yes. `["foo", "bar"]` is read as a list of class names, and lists can nest: `classNames("a", ["b", ["c" => true]])` gives `"a b c"`.
 
 </details>
 
@@ -87,6 +87,10 @@ classNames([ "foo" => true, "bar"=> true ]); // => "foo bar"
 
 // multiple argument types
 classNames("foo", [ "bar"=> true, "duck"=> false ], "baz", [ "quux"=> true ]); // => "foo bar baz quux"
+
+// lists and nested arrays
+classNames([ "foo", "bar" ]); // => "foo bar"
+classNames("a", [ "b", [ "c"=> true, "d"=> false ] ]); // => "a b c"
 
 // falsy values are ignored
 classNames(null, false, "bar", 0, 1, [ "baz"=> null ]); // => "bar 1"
